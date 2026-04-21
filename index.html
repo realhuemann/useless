@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <h1>The most useless js program</h1>
+    <input type="checkbox" id="click" name="click" value="clicked">
+    <label for="click"> Disable mouse clicking</label><br> 
+</body>
+
+</html>
+
+<script>
+    const click = document.getElementById("click")
+    let clicked = false
+
+    document.addEventListener("click", function(e) {
+        if (clicked !== false){
+            e.stopPropagation();
+            e.preventDefault();
+        }
+    }, true);
+
+    click.addEventListener("click", function(){
+        clicked = true
+    })
+</script>
